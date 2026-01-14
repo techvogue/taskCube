@@ -26,15 +26,15 @@ class ProductGallery {
   constructor() {
     this.currentIndex = 0;
     this.images = [
-      "assets/product-thumb-1.jpg",
-      "assets/product-thumb-2.jpg",
-      "assets/product-thumb-3.jpg",
-      "assets/product-thumb-4.jpg",
+      "assets/product-thumb-1.webp",
+      "assets/product-thumb-2.webp",
+      "assets/product-thumb-3.webp",
+      "assets/product-thumb-4.webp",
 
-      "assets/product-thumb-1.jpg",
-      "assets/product-thumb-2.jpg",
-      "assets/product-thumb-3.jpg",
-      "assets/product-thumb-4.jpg",
+      "assets/product-thumb-1.webp",
+      "assets/product-thumb-2.webp",
+      "assets/product-thumb-3.webp",
+      "assets/product-thumb-4.webp",
     ];
     this.mainImage = document.getElementById("main-product-image");
     this.dots = document.querySelectorAll(".dot");
