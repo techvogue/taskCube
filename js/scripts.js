@@ -3,14 +3,21 @@ const hamburgerMenu = document.querySelector(".hamburger-menu");
 const navMobile = document.querySelector(".nav-mobile");
 
 if (hamburgerMenu && navMobile) {
+  const mobileLinks = navMobile.querySelectorAll("a");
+
   hamburgerMenu.addEventListener("click", () => {
     const isOpen = navMobile.classList.toggle("active");
     hamburgerMenu.classList.toggle("active");
     document.body.classList.toggle("menu-open");
-    
+
     // Update ARIA attributes for accessibility
     hamburgerMenu.setAttribute("aria-expanded", isOpen);
     navMobile.setAttribute("aria-hidden", !isOpen);
+
+    // Toggle focusability of links
+    mobileLinks.forEach((link) => {
+      link.setAttribute("tabindex", isOpen ? "0" : "-1");
+    });
   });
 }
 
