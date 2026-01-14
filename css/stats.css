@@ -1,0 +1,31 @@
+/* Statistics Section */
+.stats-section {
+    padding: 40px 0;
+    background: var(--primary-gradient);
+
+}
+
+.stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    text-align: center;
+}
+
+.stat-bar-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.stat-bar-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.stat-bar-label {
+    font-size: 16px;
+    color: var(--white);
+    opacity: 0.9;
+}

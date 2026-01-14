@@ -1,0 +1,747 @@
+/* Product Section */
+.product-section {
+    padding: 5%;
+    position: relative;
+    
+
+}
+
+.product-banner {
+    background-color: var(--purple);
+    color: var(--white);
+    padding: 20px 40px;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 10;
+}
+
+.product-content {
+    width: 100%;
+    max-width: 1290px;
+    margin: 40px auto 0;
+    display: grid;
+    grid-template-columns: minmax(0, 640px) minmax(0, 560px);
+    gap: 100px;
+    align-items: start;
+    justify-content: center;
+}
+
+.product-gallery {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0;
+}
+
+.gallery-main {
+    position: relative;
+    background-color: var(--background-soft);
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60%;
+    opacity: 1;
+
+
+}
+
+.gallery-main img {
+    width: 200%;
+    height: 100%; 
+      
+    object-fit: fill;
+    transition: opacity 0.3s;
+      /* transform: translateY(-20px); */
+      
+}
+
+.gallery-arrow {
+  position: absolute;
+  bottom: 2.7%;
+
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  margin: 0px 5px;
+  background: transparent;
+  border: 1px solid var(--primary-deep);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--primary-deep);
+  cursor: pointer;
+
+  z-index: 10;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.gallery-arrow svg {
+  stroke: currentColor;
+  fill: none;
+}
+
+
+.gallery-arrow:hover {
+  background-color: var(--primary-deep);
+  color: var(--white);
+ 
+}
+
+.gallery-arrow-prev {
+    
+    left: 15px;
+}
+
+.gallery-arrow-next {
+    right: 15px;
+}
+
+.gallery-dots {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    z-index: 15;
+    padding: 0 60px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    border: solid 1.5px var(--primary-deep);
+    
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    background-color: var(--primary-deep);
+    transform: scale(1.2);
+}
+
+.gallery-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    width: 100%;
+}
+
+.thumbnail {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 2px solid transparent;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color: var(--background-light);
+}
+
+.thumbnail:hover {
+    border-color: var(--accent-green);
+    transform: scale(1.05);
+}
+
+.thumbnail.active {
+    border-color: var(--accent-green);
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    
+}
+
+.product-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--primary-deep);
+    
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+/* Star wrapper */
+.stars {
+  position: relative;
+  font-size: 16px;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+/* Empty stars */
+.stars-bg {
+  color: var(--border-color);
+}
+
+/* Filled stars (4.7 → 94%) */
+.stars-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--primary-bright);
+
+  width: 91.5%; 
+}
+
+.rating-text {
+  color: var(--primary-deep);
+}
+
+
+.product-description {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.1;         
+  letter-spacing: 0;
+  text-align: justify;
+
+  color: var(--primary-deep);
+}
+
+
+
+
+.subscription-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0;   
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+    border-radius: 0;
+    border: none;
+    padding: 0;
+}
+.most-popular {
+    text-align: center;
+    background: linear-gradient(270deg, var(--primary-deep) 0%, #008236 51.92%, var(--primary-bright) 100%);
+    border-top-left-radius: 6.5px;
+    border-top-right-radius: 6.5px;
+   height: 45px; 
+   font-size: 22px;
+   font-weight: 700;
+   color: rgba(255, 255, 255, 1);
+    margin: 0;
+    width: 100%;
+
+}
+
+/* Make the Add to Cart button match the subscription width */
+.product-details > #add-to-cart-link {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    background: var(--primary-gradient);
+    border-radius: 400px;
+    margin-top: 30px;
+    
+
+}
+.subscription-option {
+    --sub-pad-x: 48px;
+    --sub-head-pad-x: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: all 0.3s;
+    margin-bottom: 0;
+    border: 1px solid var(--border-color);
+    background-color: var(--white);
+}
+
+/* Space between the two subscription “buttons” */
+.subscription-option + .subscription-option {
+    margin-top: 12px;
+}
+
+/* Single subscription should only have bottom rounding */
+#single-subscription {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.subscription-option.active {
+    border-color: var(--accent-green);
+    box-shadow: 0 4px 12px rgba(107, 158, 61, 0.2);
+}
+
+.subscription-radio-label {
+    display: block;
+    cursor: pointer;
+}
+
+.subscription-radio-label input[type="radio"] {
+    display: none;
+}
+
+.subscription-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px var(--sub-head-pad-x);
+    background-color: var(--white);
+    cursor: pointer;
+    border-bottom: none;
+    position: relative;
+}
+
+.subscription-header::after {
+    content: '';
+    position: absolute;
+    left: calc(var(--sub-pad-x) + 2px);
+    right: calc(var(--sub-pad-x) + 2px);
+    bottom: -2px;
+    height: 1px;
+   
+    background: rgba(145, 151, 152, 1);
+}
+
+.subscription-header-left {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.subscription-select-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1.6px solid var(--primary-bright);
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.subscription-option.active .subscription-select-dot::after {
+    content: '';
+    position: absolute;
+    inset: 3.5px;
+    background: var(--primary-bright);
+    border-radius: 50%;
+}
+
+.subscription-header h3 {
+    font-size: 20px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 30px;
+    letter-spacing: 0.9px;
+    color: var(--primary-deep);
+    margin: 0;
+    vertical-align: middle;
+}
+
+.subscription-pricing {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.subscription-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent-green);
+}
+
+.subscription-price-old {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text-light);
+    text-decoration: line-through;
+}
+
+.subscription-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 var(--sub-pad-x);
+    background-color: var(--white);
+}
+
+.subscription-option.active .subscription-content {
+    max-height: 4000px;
+    padding: 20px var(--sub-pad-x);
+}
+
+
+
+.fragrance-selection h4 {
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 16px;
+    color: var(--primary-deep);
+}
+
+.fragrance-options {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+}
+
+.fragrance-option {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+    flex: 1;
+}
+
+.fragrance-card {
+    background: rgba(249, 249, 249, 1);
+    border-radius: 5px;
+    padding: 8px;
+    border: 1.5px solid transparent;
+    position: relative;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.fragrance-card.has-badge {
+    padding-top: 12px;
+}
+
+
+
+.fragrance-option-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 2px;
+}
+
+.fragrance-select-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 0.82px solid transparent;
+    position: relative;
+    flex: 0 0 auto;
+    background:
+        linear-gradient(rgba(249, 249, 249, 1), rgba(249, 249, 249, 1)) padding-box,
+        var(--primary-gradient-soft) border-box;
+}
+
+.fragrance-option input[type="radio"]:checked + .fragrance-card .fragrance-option-top .fragrance-select-dot::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: var(--primary-gradient-soft);
+    border-radius: 50%;
+}
+
+.fragrance-option input[type="radio"] {
+    display: none;
+}
+
+
+
+.fragrance-image {
+    width: 100%;
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+    background-color: transparent;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.fragrance-image img {
+    width: 80px;
+
+    max-height: 110px;
+    object-fit:contain;
+}
+
+.fragrance-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5px 6px;
+    border-radius: 6px 0 6px 0;
+    font-size: 6px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: #ffffff;
+    background: linear-gradient(180deg, #032E15 0%, #016630 100%);
+    position: absolute;
+    top: 0;
+    left: calc(50% + 6px);
+    transform: translate(-10%, 10%);
+    z-index: 2;
+}
+
+.fragrance-name {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(3, 46, 21, 0.6);
+    display: inline-block;
+    width: max-content;
+    flex: 0 0 auto;
+    line-height: 1.2;
+    text-align: left;
+}
+
+@supports ((-webkit-background-clip: text) and (-webkit-text-fill-color: transparent)) or (background-clip: text) {
+    .fragrance-name {
+        background-image: var(--primary-gradient-soft);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.fragrance-option input[type="radio"]:checked + .fragrance-card .fragrance-option-top .fragrance-name {
+    font-weight: 500;
+    color: var(--primary-deep);
+}
+
+.included-boxes {
+    display: grid;
+    grid-template-columns: minmax(0, 0.65fr) minmax(0, 1.35fr);
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.included-box {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 14px 16px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+}
+
+.box-label {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0;
+    color: var(--text-light);
+}
+
+.box-free {
+    color: var(--primary-deep);
+    font-weight: 700;
+}
+
+.included-box img {
+  width: 78px;
+    height: auto;
+    object-fit: contain;
+    align-self: center;
+}
+
+.box-images {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 26px;
+    width: 100%;
+    padding: 0 8px;
+}
+
+.box-images img {
+    width: 54px;
+    height: auto;
+    max-height: 120px;
+    object-fit: contain;
+}
+
+.whats-included h4 {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+    color: var(--primary-deep);
+}
+
+.whats-included ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.whats-included li {
+    font-size: 16.18px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0;
+    text-align: justify;
+    color: rgba(3, 46, 21, 0.6);
+    padding-left: 28px;
+    position: relative;
+}
+
+.whats-included li strong {
+    font-weight: 700;
+    color: var(--primary-deep);
+ }
+
+.whats-included li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.2em;
+    width: 16px;
+    height: 16px;
+    background-image: url('../assets/SealCheck.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.product-options {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    
+
+}
+
+.option-group h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.radio-option:hover {
+    background-color: var(--background-light);
+}
+
+.radio-option input[type="radio"] {
+    display: none;
+}
+
+.radio-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.radio-option input[type="radio"]:checked+.radio-custom {
+    border-color: var(--accent-green);
+}
+
+.radio-option input[type="radio"]:checked+.radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-green);
+    border-radius: 50%;
+}
+
+.radio-label {
+    font-size: 16px;
+    color: var(--text-dark);
+}
+
+/* Responsive: keep product section fitting screen */
+@media (max-width: 1024px) {
+    .product-section {
+        padding: 40px 24px;
+    }
+
+    .product-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin-top: 24px;
+    }
+
+    .subscription-options {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .fragrance-options {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .product-section {
+        padding: 28px 16px;
+    }
+
+    .fragrance-options {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .included-boxes {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,12 @@
+/* Lifestyle Section */
+.lifestyle-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.lifestyle-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}

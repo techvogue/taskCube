@@ -1,0 +1,220 @@
+/* ==============================
+   Comparison Section
+   ============================== */
+
+.comparison-section {
+  padding: 100px 0;
+  background-color: var(--white);
+  text-align: center;
+}
+
+.section-title {
+  color: var(--primary-deep);
+  margin-bottom: 60px;
+}
+
+/* ==============================
+   Container
+   ============================== */
+
+.comparison-container {
+  width: 65%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ==============================
+   Heading Divider (---)
+   ============================== */
+
+.with-divider {
+  position: relative;
+}
+
+.with-divider::before {
+  content: '---';
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  color: var(--primary-deep);
+  letter-spacing: 4px;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 1;
+}
+
+/* ==============================
+   Table Base
+   ============================== */
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* ==============================
+   Header
+   ============================== */
+
+.comparison-table th {
+  padding: 20px 10px;
+  text-align: center;
+  font-weight: 500;
+  color: #444;
+}
+
+.comparison-table th:first-child {
+  text-align: left;
+}
+
+/* REMOVE row border here (important) */
+.comparison-table thead tr {
+  border-bottom: none;
+}
+
+/* ==============================
+   Brand Header
+   ============================== */
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand img {
+  width: 88px;
+  height: 88px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.brand span {
+  color: #666;
+}
+
+/* ==============================
+   Body Rows (ALL SOLID LINES)
+   ============================== */
+
+.comparison-table tbody tr {
+  border-top: 1px solid var(--border-strong);
+}
+
+.comparison-table tbody tr:last-child {
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.comparison-table td {
+  padding: 18px 10px;
+  text-align: center;
+  color: #333;
+}
+
+.comparison-table td:first-child {
+  text-align: left;
+  color: #666;
+}
+
+/* ==============================
+   GTG Highlight Column
+   ============================== */
+
+.comparison-table th.gtg-col,
+.comparison-table td.gtg-col {
+  background-color: var(--comparison-highlight);
+  font-weight: 600;
+  color: #032E15;
+}
+
+/* ✅ ONLY dashed horizontal under GTG header (no border-bottom to avoid collapse conflicts) */
+.comparison-table th.gtg-col {
+  position: relative;
+}
+
+/* Mask the solid border behind the dashed underline */
+.comparison-table th.gtg-col::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--comparison-highlight);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.comparison-table th.gtg-col::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+ 
+  border-bottom: 1px dashed rgba(50, 45, 45, 1);
+  transform: translateY(.7px);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Hide the solid horizontal separators inside the GTG column only */
+.comparison-table tbody td.gtg-col {
+  border-top: 1px hidden;
+}
+
+.comparison-table tbody tr:last-child td.gtg-col {
+  border-bottom: 1px hidden;
+}
+
+/* ==============================
+   Status Icons
+   ============================== */
+
+.status-icon {
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  line-height: 1;
+}
+
+/* GTG = filled */
+.gtg-col .status-icon {
+  background-color: var(--primary-deep);
+  color: var(--white);
+}
+
+/* Other brands = outlined */
+.comparison-table td:not(.gtg-col) .status-icon {
+  background-color: transparent;
+  border: 1.5px solid rgba(50, 45, 45, 1);
+  color: rgba(50, 45, 45, 1);
+}
+
+/* Sharp SVG icons */
+.status-icon svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+
+/* ==============================
+   CTA Button
+   ============================== */
+
+.comparison-section .btn-primary {
+  margin: 90px auto 0;
+  width: 190px;
+  height: 56px;
+  font-weight: 500;
+}

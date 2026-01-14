@@ -1,0 +1,33 @@
+/* CSS Variables */
+:root {
+    /* Core brand greens */
+    --primary-green: #2d5016;
+    --primary-deep: #032E15;
+    --primary-mid: #016630;
+    --primary-bright: #00C950;
+
+    /* Gradients */
+    --primary-gradient: linear-gradient(180deg, #032E15 0%, #016630 100%);
+    --primary-gradient-soft: linear-gradient(180deg, rgba(3, 46, 21, 0.6) 0%, rgba(1, 102, 48, 0.6) 100%);
+
+    /* Supporting colors */
+    --light-green: #4a7c2a;
+    --accent-green: #6b9e3d;
+    --muted-green: #0D542B;
+
+    /* Neutrals */
+    --white: #ffffff;
+    --text-dark: #333333;
+    --text-light: #666666;
+    --background-light: #f5f5f5;
+    --background-soft: #e8e8e8;
+    --border-color: #e0e0e0;
+    --border-strong: #bdbdbd;
+
+    /* Accent browns (footer / CTA) */
+    --accent-brown: #653B09;
+    --accent-brown-dark: #512F07;
+
+    /* Section-specific helpers */
+    --comparison-highlight: rgba(240, 253, 244, 1);
+}

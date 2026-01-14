@@ -1,0 +1,240 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0px 60px;
+}
+
+/* Container alignment */
+.header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  background: linear-gradient(180deg,
+      rgba(3, 46, 21, 0.9) 0%,
+      rgba(1, 102, 48, 0.9) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding: 6px 16px;
+}
+
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-desktop a {
+  font-size: 16px;
+  padding-top: 8px;
+  color: rgba(22, 36, 86, 1);
+
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: opacity 0.25s ease;
+}
+
+.nav-desktop a:hover {
+  opacity: 0.8;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search-icon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon svg {
+  background: transparent;
+  fill: none;
+  /* THIS REMOVES CENTER CIRCLE */
+  stroke: var(--primary-deep);
+  /* icon outline color */
+  width: 26px;
+  height: 26px;
+}
+
+.btn-shop-now {
+  background: var(--primary-gradient);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-shop-now:hover {
+  background-color: var(--light-green);
+}
+
+/* ==============================
+   HAMBURGER MENU
+   ============================== */
+
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
+}
+
+.hamburger-menu span {
+  width: 28px;
+  height: 3px;
+  background-color: rgba(3, 46, 21, 0.9);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ==============================
+   MOBILE NAVIGATION
+   ============================== */
+
+.nav-mobile {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background: var(--primary-gradient);
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.nav-mobile.active {
+  max-height: 400px;
+  padding: 20px 60px;
+}
+
+.nav-mobile a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: block;
+  text-align: center;
+  transition: color 0.25s ease;
+}
+
+.nav-mobile a:hover {
+  color: var(--primary-bright);
+}
+
+.nav-mobile a:last-child {
+  border-bottom: none;
+}
+
+/* ==============================
+   RESPONSIVE BREAKPOINTS
+   ============================== */
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 0px 30px;
+  }
+
+  .nav-desktop {
+    display: none;
+  }
+
+  .header-actions {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .nav-mobile.active {
+    padding: 20px 30px;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 0px 20px;
+  }
+
+  .nav-mobile {
+    top: 70px;
+  }
+
+  .nav-mobile.active {
+    padding: 15px 20px;
+  }
+
+  .logo {
+    font-size: 28px;
+    padding: 6px 12px;
+  }
+}
+
+/* ==============================
+   OPTIONAL: HEADER ON SCROLL
+   ============================== */
+
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+}
+
+.header.scrolled .logo,
+.header.scrolled .nav-desktop a,
+.header.scrolled .search-icon,
+.header.scrolled .hamburger-menu span {
+  color: var(--text-dark);
+}

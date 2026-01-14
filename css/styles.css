@@ -1,0 +1,26 @@
+/* Main Stylesheet - Imports all CSS modules */
+
+/* 1. Variables - Must be first */
+@import url('variables.css');
+
+/* 2. Reset and Base Styles */
+@import url('reset.css');
+
+/* 3. Reusable Components */
+@import url('components.css');
+
+/* 4. Sections */
+@import url('header.css');
+@import url('hero.css');
+@import url('product.css');
+@import url('collection.css');
+@import url('lifestyle.css');
+@import url('stats.css');
+@import url('comparison.css');
+@import url('footer.css');
+
+/* 5. Animations */
+@import url('animations.css');
+
+/* 6. Responsive Design - Must be last */
+@import url('responsive.css');
