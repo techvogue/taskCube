@@ -38,10 +38,10 @@
 
 .gallery-main {
     position: relative;
-   margin-top: 2.2em;
+    margin-top: 2.2em;
     border: none;
     border-radius: 8px;
-    overflow: visible;
+    overflow: hidden;
     aspect-ratio: 1;
     display: flex;
     align-items: center;
@@ -49,8 +49,6 @@
     width: 100%;
     height: 60%;
     opacity: 1;
-
-
 }
 
 .gallery-main img {
@@ -64,25 +62,23 @@
 
 .gallery-arrow {
   position: absolute;
-  bottom: -1%;
-   
+  bottom: 20px;
   width: 36px;
   height: 36px;
   padding: 8px;
   margin: 0px 10px;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.9);
   border: 1px solid var(--primary-deep);
   border-radius: 50%;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   color: var(--primary-deep);
   cursor: pointer;
-
   z-index: 10;
   transition: opacity 0.3s ease, transform 0.2s ease;
+  touch-action: manipulation;
+  user-select: none;
 }
 
 .gallery-arrow svg {
@@ -98,17 +94,16 @@
 }
 
 .gallery-arrow-prev {
-    
-    left: 15px;
+    left: 30px;
 }
 
 .gallery-arrow-next {
-    right: 15px;
+    right: 30px;
 }
 
 .gallery-dots {
     position: absolute;
-    bottom: 5%;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -116,7 +111,8 @@
     align-items: center;
     gap: 10px;
     z-index: 15;
-    padding: 0 60px;
+    padding: 0 70px;
+    max-width: 90%;
 }
 
 .dot {
@@ -124,9 +120,11 @@
     height: 8px;
     border-radius: 100%;
     border: solid 1.5px var(--primary-deep);
-    
     cursor: pointer;
     transition: all 0.3s;
+    touch-action: manipulation;
+    user-select: none;
+    flex-shrink: 0;
 }
 
 .dot.active {
@@ -151,6 +149,8 @@
     cursor: pointer;
     transition: all 0.3s;
     background-color: var(--background-light);
+    touch-action: manipulation;
+    user-select: none;
 }
 
 .thumbnail:hover {
