@@ -370,6 +370,25 @@ class LazyImageLoader {
 // Initialize Lazy Loading
 document.addEventListener("DOMContentLoaded", () => {
   new LazyImageLoader();
+
+  // Lazy load hero background image
+  const heroBackground = document.querySelector(".hero-background");
+  if (heroBackground && heroBackground.dataset.bg) {
+    if ("IntersectionObserver" in window) {
+      const bgObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.backgroundImage = `url('${entry.target.dataset.bg}')`;
+            bgObserver.unobserve(entry.target);
+          }
+        });
+      });
+      bgObserver.observe(heroBackground);
+    } else {
+      // Fallback: load immediately
+      heroBackground.style.backgroundImage = `url('${heroBackground.dataset.bg}')`;
+    }
+  }
 });
 
 // Smooth Scroll for Navigation Links
