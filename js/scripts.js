@@ -4,9 +4,13 @@ const navMobile = document.querySelector(".nav-mobile");
 
 if (hamburgerMenu && navMobile) {
   hamburgerMenu.addEventListener("click", () => {
-    navMobile.classList.toggle("active");
+    const isOpen = navMobile.classList.toggle("active");
     hamburgerMenu.classList.toggle("active");
     document.body.classList.toggle("menu-open");
+    
+    // Update ARIA attributes for accessibility
+    hamburgerMenu.setAttribute("aria-expanded", isOpen);
+    navMobile.setAttribute("aria-hidden", !isOpen);
   });
 }
 
